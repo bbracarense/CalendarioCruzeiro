@@ -73,7 +73,7 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "CA Paranaense",
+    "mandante": "Athletico",
     "visitante": "CRUZEIRO",
     "rodada": 7,
     "local": "",
@@ -145,7 +145,7 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Clube do Remo",
+    "mandante": "Remo",
     "visitante": "CRUZEIRO",
     "rodada": 13,
     "local": "",
@@ -158,7 +158,7 @@
   {
     "competicao": "Brasileirão",
     "mandante": "CRUZEIRO",
-    "visitante": "CA Mineiro",
+    "visitante": "Atlético-MG",
     "rodada": 14,
     "local": "",
     "status": "encerrado",
@@ -194,7 +194,7 @@
   {
     "competicao": "Brasileirão",
     "mandante": "CRUZEIRO",
-    "visitante": "Chapecoense AF",
+    "visitante": "Chapecoense",
     "rodada": 17,
     "local": "",
     "status": "encerrado",
@@ -292,7 +292,7 @@
   {
     "competicao": "Brasileirão",
     "mandante": "CRUZEIRO",
-    "visitante": "CA Paranaense",
+    "visitante": "Athletico",
     "rodada": 26,
     "local": "",
     "status": "agendado",
@@ -352,7 +352,7 @@
   {
     "competicao": "Brasileirão",
     "mandante": "CRUZEIRO",
-    "visitante": "Clube do Remo",
+    "visitante": "Remo",
     "rodada": 32,
     "local": "",
     "status": "agendado",
@@ -361,7 +361,7 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "CA Mineiro",
+    "mandante": "Atlético-MG",
     "visitante": "CRUZEIRO",
     "rodada": 33,
     "local": "",
@@ -391,7 +391,7 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Chapecoense AF",
+    "mandante": "Chapecoense",
     "visitante": "CRUZEIRO",
     "rodada": 36,
     "local": "",
