@@ -23,6 +23,7 @@ jobs:
       - name: Buscar os jogos mais recentes
         env:
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
         run: python3 buscar_jogos.py
 
       - name: Gerar o arquivo do calendário (.ics)
