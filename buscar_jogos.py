@@ -32,6 +32,22 @@ import urllib.error
 API_URL = "https://api.football-data.org/v4/competitions/BSA/matches"
 NOME_TIME = "Cruzeiro"
 ARQUIVO_SAIDA = "jogos.json"
+ARQUIVO_APELIDOS = "nomes_times.json"
+
+def carregar_apelidos() -> dict:
+    """Lê nomes_times.json (se existir) pra trocar o nome 'cru' que a
+    fonte de dados manda pelo nome que você prefere ver no calendário.
+    Esse arquivo é o único que faz sentido você mesmo editar."""
+    try:
+        with open(ARQUIVO_APELIDOS, encoding="utf-8") as f:
+            apelidos = json.load(f)
+    except FileNotFoundError:
+        return {}
+    apelidos.pop("_como_usar", None)  # essa chave é só um comentário, ignora
+    return apelidos
+
+def normalizar_nome(nome: str, apelidos: dict) -> str:
+    return apelidos.get(nome, nome)
 
 STATUS_TRADUZIDO = {
     "SCHEDULED": "agendado",
@@ -59,7 +75,7 @@ def eh_jogo_do_time(partida: dict) -> bool:
     visitante = partida["awayTeam"]["name"] or ""
     return NOME_TIME in mandante or NOME_TIME in visitante
 
-def converter(partida: dict) -> dict:
+def converter(partida: dict, apelidos: dict) -> dict:
     status = partida.get("status", "SCHEDULED")
     utc_date = partida.get("utcDate")  # sempre vem em UTC, ex: 2026-04-12T21:30:00Z
 
@@ -72,8 +88,8 @@ def converter(partida: dict) -> dict:
 
     jogo = {
         "competicao": "Brasileirão",
-        "mandante": partida["homeTeam"]["name"],
-        "visitante": partida["awayTeam"]["name"],
+        "mandante": normalizar_nome(partida["homeTeam"]["name"], apelidos),
+        "visitante": normalizar_nome(partida["awayTeam"]["name"], apelidos),
         "rodada": partida.get("matchday"),
         "local": (partida.get("venue") or ""),
         "status": STATUS_TRADUZIDO.get(status, status),
@@ -85,9 +101,10 @@ def converter(partida: dict) -> dict:
         jogo["utc_datetime"] = utc_date
 
     if status == "FINISHED":
-        gols_casa = partida["score"]["fullTime"]["home"]
-        gols_fora = partida["score"]["fullTime"]["away"]
-        jogo["placar"] = f"{gols_casa} x {gols_fora}"
+        # Gols separados (não uma string pronta) pra quem monta o .ics poder
+        # escrever "Mandante 1 x 2 Visitante" com os nomes já normalizados.
+        jogo["gols_mandante"] = partida["score"]["fullTime"]["home"]
+        jogo["gols_visitante"] = partida["score"]["fullTime"]["away"]
 
     return jogo
 
@@ -101,8 +118,9 @@ def main():
         )
         sys.exit(1)
 
+    apelidos = carregar_apelidos()
     partidas = buscar_partidas(token)
-    jogos = [converter(p) for p in partidas if eh_jogo_do_time(p)]
+    jogos = [converter(p, apelidos) for p in partidas if eh_jogo_do_time(p)]
     jogos.sort(key=lambda j: j.get("utc_datetime") or "9999")
 
     with open(ARQUIVO_SAIDA, "w", encoding="utf-8") as f:

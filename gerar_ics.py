@@ -37,11 +37,17 @@ def dobra_linha(linha: str) -> str:
     return "\r\n".join(partes)
 
 def montar_titulo(jogo: dict) -> str:
-    base = f"{jogo['mandante']} x {jogo['visitante']} ({jogo['competicao']})"
-    if jogo.get("placar"):
-        base = f"{base} — {jogo['placar']}"
-    elif not jogo.get("data_confirmada", True):
-        base = f"{base} [data a confirmar]"
+    tem_placar = jogo.get("gols_mandante") is not None and jogo.get("gols_visitante") is not None
+    if tem_placar:
+        # Formato pedido: "Internacional 1 x 2 CRUZEIRO"
+        base = (
+            f"{jogo['mandante']} {jogo['gols_mandante']} x "
+            f"{jogo['gols_visitante']} {jogo['visitante']} ({jogo['competicao']})"
+        )
+    else:
+        base = f"{jogo['mandante']} x {jogo['visitante']} ({jogo['competicao']})"
+        if not jogo.get("data_confirmada", True):
+            base = f"{base} [data a confirmar]"
     return base
 
 def main():
@@ -67,8 +73,11 @@ def main():
         uid = uuid.uuid5(uuid.NAMESPACE_URL, chave)
         titulo = montar_titulo(jogo)
         descricao_partes = [jogo["competicao"], f"Status: {jogo.get('status', '')}"]
-        if jogo.get("placar"):
-            descricao_partes.append(f"Placar final: {jogo['placar']}")
+        if jogo.get("gols_mandante") is not None and jogo.get("gols_visitante") is not None:
+            descricao_partes.append(
+                f"Placar final: {jogo['mandante']} {jogo['gols_mandante']} x "
+                f"{jogo['gols_visitante']} {jogo['visitante']}"
+            )
         descricao = " | ".join(descricao_partes)
 
         linhas.append("BEGIN:VEVENT")

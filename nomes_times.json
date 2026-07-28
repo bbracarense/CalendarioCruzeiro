@@ -1,0 +1,28 @@
+{
+  "_como_usar": "Chave = nome como a fonte de dados manda (não mude a chave). Valor = nome que você quer que apareça no calendário. Se algum time aparecer estranho no calendário, veja o nome 'cru' dele em jogos.json e adicione uma linha aqui igual às outras, com vírgula no final de todas menos a última.",
+
+  "Cruzeiro EC": "CRUZEIRO",
+  "SC Internacional": "Internacional",
+  "CR Flamengo": "Flamengo",
+  "Botafogo FR": "Botafogo",
+  "Fluminense FC": "Fluminense",
+  "CR Vasco da Gama": "Vasco",
+  "SE Palmeiras": "Palmeiras",
+  "São Paulo FC": "São Paulo",
+  "SC Corinthians Paulista": "Corinthians",
+  "Santos FC": "Santos",
+  "Grêmio FBPA": "Grêmio",
+  "EC Bahia": "Bahia",
+  "EC Vitória": "Vitória",
+  "Sport Club do Recife": "Sport",
+  "Ceará Sporting Club": "Ceará",
+  "Fortaleza EC": "Fortaleza",
+  "EC Juventude": "Juventude",
+  "Mirassol FC": "Mirassol",
+  "Red Bull Bragantino": "Bragantino",
+  "Clube Atlético Mineiro": "Atlético-MG",
+  "Coritiba FC": "Coritiba",
+  "Athletico Paranaense": "Athletico-PR",
+  "Associação Chapecoense de Futebol": "Chapecoense",
+  "Clube Náutico Capibaribe": "Náutico"
+}
