@@ -1,228 +1,248 @@
 [
   {
     "competicao": "Brasileirão",
-    "mandante": "Botafogo FR",
-    "visitante": "Cruzeiro EC",
+    "mandante": "Botafogo",
+    "visitante": "CRUZEIRO",
     "rodada": 1,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-01-30T00:30:00Z",
-    "placar": "4 x 0"
+    "gols_mandante": 4,
+    "gols_visitante": 0
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
+    "mandante": "CRUZEIRO",
     "visitante": "Coritiba FBC",
     "rodada": 2,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-02-06T00:30:00Z",
-    "placar": "1 x 2"
+    "gols_mandante": 1,
+    "gols_visitante": 2
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Mirassol FC",
-    "visitante": "Cruzeiro EC",
+    "mandante": "Mirassol",
+    "visitante": "CRUZEIRO",
     "rodada": 3,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-02-11T22:00:00Z",
-    "placar": "2 x 2"
+    "gols_mandante": 2,
+    "gols_visitante": 2
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
-    "visitante": "SC Corinthians Paulista",
+    "mandante": "CRUZEIRO",
+    "visitante": "Corinthians",
     "rodada": 4,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-02-25T23:00:00Z",
-    "placar": "1 x 1"
+    "gols_mandante": 1,
+    "gols_visitante": 1
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "CR Flamengo",
-    "visitante": "Cruzeiro EC",
+    "mandante": "Flamengo",
+    "visitante": "CRUZEIRO",
     "rodada": 5,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-03-12T00:30:00Z",
-    "placar": "2 x 0"
+    "gols_mandante": 2,
+    "gols_visitante": 0
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
-    "visitante": "CR Vasco da Gama",
+    "mandante": "CRUZEIRO",
+    "visitante": "Vasco",
     "rodada": 6,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-03-15T23:30:00Z",
-    "placar": "3 x 3"
+    "gols_mandante": 3,
+    "gols_visitante": 3
   },
   {
     "competicao": "Brasileirão",
     "mandante": "CA Paranaense",
-    "visitante": "Cruzeiro EC",
+    "visitante": "CRUZEIRO",
     "rodada": 7,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-03-18T22:30:00Z",
-    "placar": "2 x 1"
+    "gols_mandante": 2,
+    "gols_visitante": 1
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
-    "visitante": "Santos FC",
+    "mandante": "CRUZEIRO",
+    "visitante": "Santos",
     "rodada": 8,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-03-22T19:00:00Z",
-    "placar": "0 x 0"
+    "gols_mandante": 0,
+    "gols_visitante": 0
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
-    "visitante": "EC Vitória",
+    "mandante": "CRUZEIRO",
+    "visitante": "Vitória",
     "rodada": 9,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-04-01T23:00:00Z",
-    "placar": "3 x 0"
+    "gols_mandante": 3,
+    "gols_visitante": 0
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "São Paulo FC",
-    "visitante": "Cruzeiro EC",
+    "mandante": "São Paulo",
+    "visitante": "CRUZEIRO",
     "rodada": 10,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-04-04T21:30:00Z",
-    "placar": "4 x 1"
+    "gols_mandante": 4,
+    "gols_visitante": 1
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
+    "mandante": "CRUZEIRO",
     "visitante": "RB Bragantino",
     "rodada": 11,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-04-12T21:30:00Z",
-    "placar": "2 x 1"
+    "gols_mandante": 2,
+    "gols_visitante": 1
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
-    "visitante": "Grêmio FBPA",
+    "mandante": "CRUZEIRO",
+    "visitante": "Grêmio",
     "rodada": 12,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-04-18T23:30:00Z",
-    "placar": "2 x 0"
+    "gols_mandante": 2,
+    "gols_visitante": 0
   },
   {
     "competicao": "Brasileirão",
     "mandante": "Clube do Remo",
-    "visitante": "Cruzeiro EC",
+    "visitante": "CRUZEIRO",
     "rodada": 13,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-04-25T21:30:00Z",
-    "placar": "0 x 1"
+    "gols_mandante": 0,
+    "gols_visitante": 1
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
+    "mandante": "CRUZEIRO",
     "visitante": "CA Mineiro",
     "rodada": 14,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-05-03T00:00:00Z",
-    "placar": "1 x 3"
+    "gols_mandante": 1,
+    "gols_visitante": 3
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "EC Bahia",
-    "visitante": "Cruzeiro EC",
+    "mandante": "Bahia",
+    "visitante": "CRUZEIRO",
     "rodada": 15,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-05-10T00:00:00Z",
-    "placar": "1 x 2"
+    "gols_mandante": 1,
+    "gols_visitante": 2
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "SE Palmeiras",
-    "visitante": "Cruzeiro EC",
+    "mandante": "Palmeiras",
+    "visitante": "CRUZEIRO",
     "rodada": 16,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-05-17T00:00:00Z",
-    "placar": "1 x 1"
+    "gols_mandante": 1,
+    "gols_visitante": 1
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
+    "mandante": "CRUZEIRO",
     "visitante": "Chapecoense AF",
     "rodada": 17,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-05-24T19:00:00Z",
-    "placar": "2 x 1"
+    "gols_mandante": 2,
+    "gols_visitante": 1
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
-    "visitante": "Fluminense FC",
+    "mandante": "CRUZEIRO",
+    "visitante": "Fluminense",
     "rodada": 18,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-05-31T23:30:00Z",
-    "placar": "1 x 1"
+    "gols_mandante": 1,
+    "gols_visitante": 1
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "SC Internacional",
-    "visitante": "Cruzeiro EC",
+    "mandante": "Internacional",
+    "visitante": "CRUZEIRO",
     "rodada": 19,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-07-23T00:30:00Z",
-    "placar": "1 x 2"
+    "gols_mandante": 1,
+    "gols_visitante": 2
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
-    "visitante": "Botafogo FR",
+    "mandante": "CRUZEIRO",
+    "visitante": "Botafogo",
     "rodada": 20,
     "local": "",
     "status": "encerrado",
     "data_confirmada": true,
     "utc_datetime": "2026-07-26T19:00:00Z",
-    "placar": "0 x 1"
+    "gols_mandante": 0,
+    "gols_visitante": 1
   },
   {
     "competicao": "Brasileirão",
     "mandante": "Coritiba FBC",
-    "visitante": "Cruzeiro EC",
+    "visitante": "CRUZEIRO",
     "rodada": 21,
     "local": "",
     "status": "agendado",
@@ -231,8 +251,8 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
-    "visitante": "Mirassol FC",
+    "mandante": "CRUZEIRO",
+    "visitante": "Mirassol",
     "rodada": 22,
     "local": "",
     "status": "agendado",
@@ -241,8 +261,8 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "SC Corinthians Paulista",
-    "visitante": "Cruzeiro EC",
+    "mandante": "Corinthians",
+    "visitante": "CRUZEIRO",
     "rodada": 23,
     "local": "",
     "status": "agendado",
@@ -251,8 +271,8 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
-    "visitante": "CR Flamengo",
+    "mandante": "CRUZEIRO",
+    "visitante": "Flamengo",
     "rodada": 24,
     "local": "",
     "status": "agendado",
@@ -261,8 +281,8 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "CR Vasco da Gama",
-    "visitante": "Cruzeiro EC",
+    "mandante": "Vasco",
+    "visitante": "CRUZEIRO",
     "rodada": 25,
     "local": "",
     "status": "agendado",
@@ -271,7 +291,7 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
+    "mandante": "CRUZEIRO",
     "visitante": "CA Paranaense",
     "rodada": 26,
     "local": "",
@@ -281,8 +301,8 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Santos FC",
-    "visitante": "Cruzeiro EC",
+    "mandante": "Santos",
+    "visitante": "CRUZEIRO",
     "rodada": 27,
     "local": "",
     "status": "agendado",
@@ -291,8 +311,8 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "EC Vitória",
-    "visitante": "Cruzeiro EC",
+    "mandante": "Vitória",
+    "visitante": "CRUZEIRO",
     "rodada": 28,
     "local": "",
     "status": "agendado",
@@ -301,8 +321,8 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
-    "visitante": "São Paulo FC",
+    "mandante": "CRUZEIRO",
+    "visitante": "São Paulo",
     "rodada": 29,
     "local": "",
     "status": "agendado",
@@ -312,7 +332,7 @@
   {
     "competicao": "Brasileirão",
     "mandante": "RB Bragantino",
-    "visitante": "Cruzeiro EC",
+    "visitante": "CRUZEIRO",
     "rodada": 30,
     "local": "",
     "status": "agendado",
@@ -321,8 +341,8 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Grêmio FBPA",
-    "visitante": "Cruzeiro EC",
+    "mandante": "Grêmio",
+    "visitante": "CRUZEIRO",
     "rodada": 31,
     "local": "",
     "status": "agendado",
@@ -331,7 +351,7 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
+    "mandante": "CRUZEIRO",
     "visitante": "Clube do Remo",
     "rodada": 32,
     "local": "",
@@ -342,7 +362,7 @@
   {
     "competicao": "Brasileirão",
     "mandante": "CA Mineiro",
-    "visitante": "Cruzeiro EC",
+    "visitante": "CRUZEIRO",
     "rodada": 33,
     "local": "",
     "status": "agendado",
@@ -351,8 +371,8 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
-    "visitante": "EC Bahia",
+    "mandante": "CRUZEIRO",
+    "visitante": "Bahia",
     "rodada": 34,
     "local": "",
     "status": "agendado",
@@ -361,8 +381,8 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
-    "visitante": "SE Palmeiras",
+    "mandante": "CRUZEIRO",
+    "visitante": "Palmeiras",
     "rodada": 35,
     "local": "",
     "status": "agendado",
@@ -372,7 +392,7 @@
   {
     "competicao": "Brasileirão",
     "mandante": "Chapecoense AF",
-    "visitante": "Cruzeiro EC",
+    "visitante": "CRUZEIRO",
     "rodada": 36,
     "local": "",
     "status": "agendado",
@@ -381,8 +401,8 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Fluminense FC",
-    "visitante": "Cruzeiro EC",
+    "mandante": "Fluminense",
+    "visitante": "CRUZEIRO",
     "rodada": 37,
     "local": "",
     "status": "agendado",
@@ -391,8 +411,8 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Cruzeiro EC",
-    "visitante": "SC Internacional",
+    "mandante": "CRUZEIRO",
+    "visitante": "Internacional",
     "rodada": 38,
     "local": "",
     "status": "agendado",
