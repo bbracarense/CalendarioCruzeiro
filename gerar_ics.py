@@ -69,7 +69,7 @@ def main():
     ]
 
     for jogo in jogos:
-        chave = f"{jogo.get('rodada')}-{jogo['mandante']}-{jogo['visitante']}"
+        chave = jogo.get("chave_unica") or f"{jogo.get('rodada')}-{jogo['mandante']}-{jogo['visitante']}"
         uid = uuid.uuid5(uuid.NAMESPACE_URL, chave)
         titulo = montar_titulo(jogo)
         descricao_partes = [jogo["competicao"], f"Status: {jogo.get('status', '')}"]

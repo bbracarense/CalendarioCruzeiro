@@ -2,6 +2,7 @@
   "_como_usar": "Chave = nome como a fonte de dados manda (não mude a chave). Valor = nome que você quer que apareça no calendário. Se algum time aparecer estranho no calendário, veja o nome 'cru' dele em jogos.json e adicione uma linha aqui igual às outras, com vírgula no final de todas menos a última.",
 
   "Cruzeiro EC": "CRUZEIRO",
+  "Cruzeiro": "CRUZEIRO",
   "SC Internacional": "Internacional",
   "CR Flamengo": "Flamengo",
   "Botafogo FR": "Botafogo",
@@ -20,11 +21,9 @@
   "EC Juventude": "Juventude",
   "Mirassol FC": "Mirassol",
   "Red Bull Bragantino": "Bragantino",
-  "CA Mineiro": "Atlético-MG",
+  "Clube Atlético Mineiro": "Atlético-MG",
   "Coritiba FC": "Coritiba",
   "Athletico Paranaense": "Athletico-PR",
-  "Chapecoense AF": "Chapecoense",
-  "Clube Náutico Capibaribe": "Náutico",
-  "Clube do Remo": "Remo",
-  "CA Paranaense": "Athletico"
+  "Associação Chapecoense de Futebol": "Chapecoense",
+  "Clube Náutico Capibaribe": "Náutico"
 }

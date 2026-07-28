@@ -1,26 +1,29 @@
 #!/usr/bin/env python3
 """
-Busca automaticamente os jogos do Cruzeiro no Brasileirão (fonte:
-football-data.org, que é gratuita) e escreve jogos.json sozinho —
+Busca automaticamente os jogos do Cruzeiro e escreve jogos.json sozinho —
 ninguém precisa editar esse arquivo à mão.
 
-Como funciona:
-  - Enquanto a CBF não divulgou data/hora de um jogo, ele entra no
-    calendário como "data a confirmar" (evento de dia inteiro, na semana
-    aproximada da rodada), só pra você não perder o jogo de vista.
-  - Assim que a CBF confirma a data/hora, o jogo passa a aparecer com
-    hora certa (o evento é atualizado, não duplicado).
-  - Depois que o jogo acontece, o placar final é adicionado no título
-    e na descrição do mesmo evento.
+Duas fontes de dados, porque nenhuma sozinha cobre tudo de graça:
+  1) football-data.org -> Brasileirão Série A
+  2) API-Football       -> Copa do Brasil, Libertadores, Sul-Americana
+     (essas competições não existem no plano gratuito da football-data.org)
 
-Precisa de uma chave de API gratuita da football-data.org, lida da
-variável de ambiente FOOTBALL_DATA_API_KEY (no GitHub Actions isso vem
-de um "Secret" — veja o README, ninguém digita a chave dentro do código).
+Chaves de API esperadas nas variáveis de ambiente (no GitHub Actions são
+"Secrets" — veja o README, ninguém digita chave dentro do código):
+  - FOOTBALL_DATA_API_KEY
+  - API_FOOTBALL_KEY
 
-IMPORTANTE — limitação da camada gratuita: a football-data.org cobre o
-Brasileirão Série A. Copa do Brasil e Libertadores não estão incluídas
-no plano gratuito; para esses, o jeito mais simples ainda é acrescentar
-o jogo manualmente (veja README) ou migrar para uma API paga que cubra.
+Se a chave da API-Football não estiver configurada, o script simplesmente
+pula a busca de copas e continua funcionando só com o Brasileirão (não
+quebra nada pra quem ainda não configurou a segunda chave).
+
+Como funciona a lógica de datas/placar (igual pras duas fontes):
+  - Jogo sem data definida ainda -> entra como aviso de dia inteiro,
+    marcado "[data a confirmar]".
+  - Data/hora confirmada -> vira um evento com hora certa (atualiza o
+    mesmo evento, não duplica).
+  - Jogo encerrado -> o placar final é adicionado no título e na descrição.
+  - O nome do estádio, quando disponível na fonte, vai no campo "local".
 """
 
 import json
@@ -29,27 +32,43 @@ import sys
 import urllib.request
 import urllib.error
 
-API_URL = "https://api.football-data.org/v4/competitions/BSA/matches"
-NOME_TIME = "Cruzeiro"
 ARQUIVO_SAIDA = "jogos.json"
 ARQUIVO_APELIDOS = "nomes_times.json"
+NOME_TIME = "Cruzeiro"
+
+# ---------------------------------------------------------------------
+# Apelidos dos times (nomes_times.json) — igual antes
+# ---------------------------------------------------------------------
 
 def carregar_apelidos() -> dict:
-    """Lê nomes_times.json (se existir) pra trocar o nome 'cru' que a
-    fonte de dados manda pelo nome que você prefere ver no calendário.
-    Esse arquivo é o único que faz sentido você mesmo editar."""
     try:
         with open(ARQUIVO_APELIDOS, encoding="utf-8") as f:
             apelidos = json.load(f)
     except FileNotFoundError:
         return {}
-    apelidos.pop("_como_usar", None)  # essa chave é só um comentário, ignora
+    apelidos.pop("_como_usar", None)
     return apelidos
 
 def normalizar_nome(nome: str, apelidos: dict) -> str:
     return apelidos.get(nome, nome)
 
-STATUS_TRADUZIDO = {
+def chamar_api(url: str, headers: dict) -> dict:
+    req = urllib.request.Request(url, headers=headers)
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return json.load(resp)
+    except urllib.error.HTTPError as e:
+        print(f"Erro ao consultar {url}: {e.code} {e.reason}", file=sys.stderr)
+        return {}
+    except urllib.error.URLError as e:
+        print(f"Erro de conexão com {url}: {e.reason}", file=sys.stderr)
+        return {}
+
+# ---------------------------------------------------------------------
+# Fonte 1: football-data.org (Brasileirão)
+# ---------------------------------------------------------------------
+
+STATUS_FOOTBALL_DATA = {
     "SCHEDULED": "agendado",
     "TIMED": "agendado",
     "IN_PLAY": "em andamento",
@@ -60,67 +79,160 @@ STATUS_TRADUZIDO = {
     "CANCELLED": "cancelado",
 }
 
-def buscar_partidas(token: str) -> list:
-    req = urllib.request.Request(API_URL, headers={"X-Auth-Token": token})
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            dados = json.load(resp)
-    except urllib.error.HTTPError as e:
-        print(f"Erro ao consultar a API: {e.code} {e.reason}", file=sys.stderr)
-        sys.exit(1)
-    return dados.get("matches", [])
+def buscar_brasileirao(token: str, apelidos: dict) -> list:
+    if not token:
+        print("Aviso: FOOTBALL_DATA_API_KEY não configurada, pulando o Brasileirão.")
+        return []
 
-def eh_jogo_do_time(partida: dict) -> bool:
-    mandante = partida["homeTeam"]["name"] or ""
-    visitante = partida["awayTeam"]["name"] or ""
-    return NOME_TIME in mandante or NOME_TIME in visitante
+    dados = chamar_api(
+        "https://api.football-data.org/v4/competitions/BSA/matches",
+        {"X-Auth-Token": token},
+    )
+    jogos = []
+    for partida in dados.get("matches", []):
+        mandante = partida["homeTeam"]["name"] or ""
+        visitante = partida["awayTeam"]["name"] or ""
+        if NOME_TIME not in mandante and NOME_TIME not in visitante:
+            continue
 
-def converter(partida: dict, apelidos: dict) -> dict:
-    status = partida.get("status", "SCHEDULED")
-    utc_date = partida.get("utcDate")  # sempre vem em UTC, ex: 2026-04-12T21:30:00Z
+        status = partida.get("status", "SCHEDULED")
+        utc_date = partida.get("utcDate")
 
-    data_confirmada = status not in ("SCHEDULED",) and utc_date is not None
-    # Mesmo em SCHEDULED a API costuma já trazer utcDate, então também
-    # tratamos como confirmado quando o horário não é o "meio-dia
-    # genérico" que a CBF usa como placeholder antes de decidir.
-    if utc_date:
-        data_confirmada = True
+        jogo = {
+            "competicao": "Brasileirão",
+            "mandante": normalizar_nome(mandante, apelidos),
+            "visitante": normalizar_nome(visitante, apelidos),
+            "chave_unica": f"BSA-{partida.get('matchday')}-{mandante}-{visitante}",
+            "local": (partida.get("venue") or ""),
+            "status": STATUS_FOOTBALL_DATA.get(status, status),
+            "data_confirmada": utc_date is not None,
+        }
+        if utc_date:
+            jogo["utc_datetime"] = utc_date
+        if status == "FINISHED":
+            jogo["gols_mandante"] = partida["score"]["fullTime"]["home"]
+            jogo["gols_visitante"] = partida["score"]["fullTime"]["away"]
+        jogos.append(jogo)
 
-    jogo = {
-        "competicao": "Brasileirão",
-        "mandante": normalizar_nome(partida["homeTeam"]["name"], apelidos),
-        "visitante": normalizar_nome(partida["awayTeam"]["name"], apelidos),
-        "rodada": partida.get("matchday"),
-        "local": (partida.get("venue") or ""),
-        "status": STATUS_TRADUZIDO.get(status, status),
-        "data_confirmada": data_confirmada,
-    }
+    return jogos
 
-    if utc_date:
-        # Guardamos em UTC; quem monta o .ics converte pro horário de Brasília.
-        jogo["utc_datetime"] = utc_date
+# ---------------------------------------------------------------------
+# Fonte 2: API-Football (Copa do Brasil, Libertadores, Sul-Americana)
+# ---------------------------------------------------------------------
 
-    if status == "FINISHED":
-        # Gols separados (não uma string pronta) pra quem monta o .ics poder
-        # escrever "Mandante 1 x 2 Visitante" com os nomes já normalizados.
-        jogo["gols_mandante"] = partida["score"]["fullTime"]["home"]
-        jogo["gols_visitante"] = partida["score"]["fullTime"]["away"]
+API_FOOTBALL_BASE = "https://v3.football.api-sports.io"
 
-    return jogo
+# Nomes exatamente como a API-Football chama essas competições na busca.
+COMPETICOES_COPAS = {
+    "Copa do Brasil": "Copa do Brasil",
+    "CONMEBOL Libertadores": "Libertadores",
+    "CONMEBOL Sudamericana": "Sul-Americana",
+}
+
+STATUS_API_FOOTBALL = {
+    "TBD": "agendado",       # data a definir
+    "NS": "agendado",        # not started
+    "1H": "em andamento",
+    "HT": "em andamento",
+    "2H": "em andamento",
+    "ET": "em andamento",
+    "P": "em andamento",
+    "FT": "encerrado",
+    "AET": "encerrado",
+    "PEN": "encerrado",
+    "PST": "adiado",
+    "CANC": "cancelado",
+    "ABD": "suspenso",
+}
+
+def buscar_id_time(headers: dict) -> int | None:
+    dados = chamar_api(
+        f"{API_FOOTBALL_BASE}/teams?search={NOME_TIME}", headers
+    )
+    for item in dados.get("response", []):
+        if item["team"]["country"] == "Brazil" and item["team"]["name"] == "Cruzeiro":
+            return item["team"]["id"]
+    # fallback: primeiro resultado no Brasil com "Cruzeiro" no nome
+    for item in dados.get("response", []):
+        if item["team"]["country"] == "Brazil":
+            return item["team"]["id"]
+    return None
+
+def buscar_id_liga(nome_busca: str, headers: dict) -> tuple[int, int] | None:
+    """Retorna (id_da_liga, ano_da_temporada_atual) ou None se não achar."""
+    dados = chamar_api(
+        f"{API_FOOTBALL_BASE}/leagues?search={nome_busca}", headers
+    )
+    for item in dados.get("response", []):
+        temporadas = item.get("seasons", [])
+        for temporada in temporadas:
+            if temporada.get("current"):
+                return item["league"]["id"], temporada["year"]
+    return None
+
+def buscar_copas(token: str, apelidos: dict) -> list:
+    if not token:
+        print("Aviso: API_FOOTBALL_KEY não configurada, pulando Copa do Brasil/Libertadores/Sul-Americana.")
+        return []
+
+    headers = {"x-apisports-key": token}
+    time_id = buscar_id_time(headers)
+    if not time_id:
+        print("Aviso: não encontrei o Cruzeiro na API-Football.", file=sys.stderr)
+        return []
+
+    jogos = []
+    for nome_busca, nome_exibicao in COMPETICOES_COPAS.items():
+        liga = buscar_id_liga(nome_busca, headers)
+        if not liga:
+            print(f"Aviso: não encontrei a competição '{nome_busca}' nesta temporada (pode ainda não ter começado).")
+            continue
+        liga_id, temporada = liga
+
+        dados = chamar_api(
+            f"{API_FOOTBALL_BASE}/fixtures?league={liga_id}&season={temporada}&team={time_id}",
+            headers,
+        )
+        for partida in dados.get("response", []):
+            mandante = partida["teams"]["home"]["name"]
+            visitante = partida["teams"]["away"]["name"]
+            status_curto = partida["fixture"]["status"]["short"]
+            data_iso = partida["fixture"].get("date")  # ex: 2026-04-07T21:00:00+00:00
+            venue = partida["fixture"].get("venue") or {}
+
+            jogo = {
+                "competicao": nome_exibicao,
+                "mandante": normalizar_nome(mandante, apelidos),
+                "visitante": normalizar_nome(visitante, apelidos),
+                "chave_unica": f"{nome_exibicao}-{partida['league'].get('round')}-{mandante}-{visitante}",
+                "local": venue.get("name") or "",
+                "status": STATUS_API_FOOTBALL.get(status_curto, status_curto),
+                "data_confirmada": status_curto != "TBD" and data_iso is not None,
+            }
+            if data_iso:
+                # Normaliza pro mesmo formato UTC "...Z" usado na outra fonte.
+                jogo["utc_datetime"] = (
+                    data_iso.replace("+00:00", "Z") if data_iso.endswith("+00:00") else data_iso
+                )
+            if status_curto in ("FT", "AET", "PEN"):
+                gols = partida.get("goals", {})
+                if gols.get("home") is not None:
+                    jogo["gols_mandante"] = gols["home"]
+                    jogo["gols_visitante"] = gols["away"]
+
+            jogos.append(jogo)
+
+    return jogos
+
+# ---------------------------------------------------------------------
 
 def main():
-    token = os.environ.get("FOOTBALL_DATA_API_KEY")
-    if not token:
-        print(
-            "Defina a variável de ambiente FOOTBALL_DATA_API_KEY "
-            "(no GitHub Actions isso é um Secret, veja o README).",
-            file=sys.stderr,
-        )
-        sys.exit(1)
-
     apelidos = carregar_apelidos()
-    partidas = buscar_partidas(token)
-    jogos = [converter(p, apelidos) for p in partidas if eh_jogo_do_time(p)]
+
+    jogos = []
+    jogos += buscar_brasileirao(os.environ.get("FOOTBALL_DATA_API_KEY"), apelidos)
+    jogos += buscar_copas(os.environ.get("API_FOOTBALL_KEY"), apelidos)
+
     jogos.sort(key=lambda j: j.get("utc_datetime") or "9999")
 
     with open(ARQUIVO_SAIDA, "w", encoding="utf-8") as f:
