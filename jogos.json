@@ -14,7 +14,7 @@
   {
     "competicao": "Brasileirão",
     "mandante": "CRUZEIRO",
-    "visitante": "Coritiba FBC",
+    "visitante": "Coritiba",
     "chave_unica": "BSA-2-Cruzeiro EC-Coritiba FBC",
     "local": "",
     "status": "encerrado",
@@ -73,7 +73,7 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "CA Paranaense",
+    "mandante": "Athletico-PR",
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-7-CA Paranaense-Cruzeiro EC",
     "local": "",
@@ -145,7 +145,7 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Clube do Remo",
+    "mandante": "Remo",
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-13-Clube do Remo-Cruzeiro EC",
     "local": "",
@@ -158,7 +158,7 @@
   {
     "competicao": "Brasileirão",
     "mandante": "CRUZEIRO",
-    "visitante": "CA Mineiro",
+    "visitante": "Frangas",
     "chave_unica": "BSA-14-Cruzeiro EC-CA Mineiro",
     "local": "",
     "status": "encerrado",
@@ -194,7 +194,7 @@
   {
     "competicao": "Brasileirão",
     "mandante": "CRUZEIRO",
-    "visitante": "Chapecoense AF",
+    "visitante": "Chapecoense",
     "chave_unica": "BSA-17-Cruzeiro EC-Chapecoense AF",
     "local": "",
     "status": "encerrado",
@@ -241,7 +241,7 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Coritiba FBC",
+    "mandante": "Coritiba",
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-21-Coritiba FBC-Cruzeiro EC",
     "local": "",
@@ -292,7 +292,7 @@
   {
     "competicao": "Brasileirão",
     "mandante": "CRUZEIRO",
-    "visitante": "CA Paranaense",
+    "visitante": "Athletico-PR",
     "chave_unica": "BSA-26-Cruzeiro EC-CA Paranaense",
     "local": "",
     "status": "agendado",
@@ -352,7 +352,7 @@
   {
     "competicao": "Brasileirão",
     "mandante": "CRUZEIRO",
-    "visitante": "Clube do Remo",
+    "visitante": "Remo",
     "chave_unica": "BSA-32-Cruzeiro EC-Clube do Remo",
     "local": "",
     "status": "agendado",
@@ -361,7 +361,7 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "CA Mineiro",
+    "mandante": "Frangas",
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-33-CA Mineiro-Cruzeiro EC",
     "local": "",
@@ -391,7 +391,7 @@
   },
   {
     "competicao": "Brasileirão",
-    "mandante": "Chapecoense AF",
+    "mandante": "Chapecoense",
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-36-Chapecoense AF-Cruzeiro EC",
     "local": "",
