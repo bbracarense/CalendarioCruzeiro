@@ -8,39 +8,345 @@ X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
-UID:aa28bcf7-2cee-5752-95fb-4b6da94696bc@cruzeiro-fans-calendar
-DTSTAMP:20260728T190238Z
+UID:6318713a-fdbf-5d5f-af30-0eea3f91ad07@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260129T213000
+DTEND;TZID=America/Sao_Paulo:20260129T233000
+SUMMARY:Botafogo FR x Cruzeiro EC (Brasileirão) — 4 x 0
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 4 x 0
+END:VEVENT
+BEGIN:VEVENT
+UID:2cfd62a3-66b5-5468-8bf9-37407fdd886a@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260205T213000
+DTEND;TZID=America/Sao_Paulo:20260205T233000
+SUMMARY:Cruzeiro EC x Coritiba FBC (Brasileirão) — 1 x 2
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 1 x 2
+END:VEVENT
+BEGIN:VEVENT
+UID:db6c6225-813c-5a35-b477-d29486672efa@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260211T190000
+DTEND;TZID=America/Sao_Paulo:20260211T210000
+SUMMARY:Mirassol FC x Cruzeiro EC (Brasileirão) — 2 x 2
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 2 x 2
+END:VEVENT
+BEGIN:VEVENT
+UID:e36aee03-7f4f-54c6-9db9-88f9058ac63f@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260225T200000
+DTEND;TZID=America/Sao_Paulo:20260225T220000
+SUMMARY:Cruzeiro EC x SC Corinthians Paulista (Brasileirão) — 1 x 1
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 1 x 1
+END:VEVENT
+BEGIN:VEVENT
+UID:401208a6-f9cf-535c-93dc-c24bdced2c66@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260311T213000
+DTEND;TZID=America/Sao_Paulo:20260311T233000
+SUMMARY:CR Flamengo x Cruzeiro EC (Brasileirão) — 2 x 0
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 2 x 0
+END:VEVENT
+BEGIN:VEVENT
+UID:4b5ee39c-cbf0-5db2-a995-835b910c6572@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260315T203000
+DTEND;TZID=America/Sao_Paulo:20260315T223000
+SUMMARY:Cruzeiro EC x CR Vasco da Gama (Brasileirão) — 3 x 3
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 3 x 3
+END:VEVENT
+BEGIN:VEVENT
+UID:2835f294-fbaa-5f38-8ccc-b00f6d7d8d14@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260318T193000
+DTEND;TZID=America/Sao_Paulo:20260318T213000
+SUMMARY:CA Paranaense x Cruzeiro EC (Brasileirão) — 2 x 1
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 2 x 1
+END:VEVENT
+BEGIN:VEVENT
+UID:e042201d-0660-5802-b115-dc419a856389@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260322T160000
+DTEND;TZID=America/Sao_Paulo:20260322T180000
+SUMMARY:Cruzeiro EC x Santos FC (Brasileirão) — 0 x 0
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 0 x 0
+END:VEVENT
+BEGIN:VEVENT
+UID:1fb6cd63-0809-5dbb-b34a-e8f65afeb5be@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260401T200000
+DTEND;TZID=America/Sao_Paulo:20260401T220000
+SUMMARY:Cruzeiro EC x EC Vitória (Brasileirão) — 3 x 0
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 3 x 0
+END:VEVENT
+BEGIN:VEVENT
+UID:a0c22f69-1d7a-5078-b85b-f66219d842e8@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
 DTSTART;TZID=America/Sao_Paulo:20260404T183000
 DTEND;TZID=America/Sao_Paulo:20260404T203000
-SUMMARY:São Paulo x Cruzeiro (Brasileirão)
-LOCATION:MorumBIS
-DESCRIPTION:Brasileirão | Status: agendado
+SUMMARY:São Paulo FC x Cruzeiro EC (Brasileirão) — 4 x 1
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 4 x 1
 END:VEVENT
 BEGIN:VEVENT
-UID:ce85c0f3-98d5-5729-b752-49bcd6125e1c@cruzeiro-fans-calendar
-DTSTAMP:20260728T190238Z
+UID:17a1a89f-7e8a-5b6e-bfa1-c729d80814e7@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
 DTSTART;TZID=America/Sao_Paulo:20260412T183000
 DTEND;TZID=America/Sao_Paulo:20260412T203000
-SUMMARY:Cruzeiro x Bragantino (Brasileirão)
-LOCATION:Mineirão
-DESCRIPTION:Brasileirão | Status: agendado
+SUMMARY:Cruzeiro EC x RB Bragantino (Brasileirão) — 2 x 1
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 2 x 1
 END:VEVENT
 BEGIN:VEVENT
-UID:00f345a0-5751-5cd7-89fb-80c425a59e70@cruzeiro-fans-calendar
-DTSTAMP:20260728T190238Z
+UID:0707eba2-630a-5125-8220-df94a8ef7f3c@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
 DTSTART;TZID=America/Sao_Paulo:20260418T203000
 DTEND;TZID=America/Sao_Paulo:20260418T223000
-SUMMARY:Cruzeiro x Grêmio (Brasileirão)
-LOCATION:Mineirão
+SUMMARY:Cruzeiro EC x Grêmio FBPA (Brasileirão) — 2 x 0
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 2 x 0
+END:VEVENT
+BEGIN:VEVENT
+UID:576d748e-ca67-51dd-be3f-d0f510819ec5@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260425T183000
+DTEND;TZID=America/Sao_Paulo:20260425T203000
+SUMMARY:Clube do Remo x Cruzeiro EC (Brasileirão) — 0 x 1
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 0 x 1
+END:VEVENT
+BEGIN:VEVENT
+UID:f79c7c83-b5be-5efc-90af-99e59a76db4c@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260502T210000
+DTEND;TZID=America/Sao_Paulo:20260502T230000
+SUMMARY:Cruzeiro EC x CA Mineiro (Brasileirão) — 1 x 3
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 1 x 3
+END:VEVENT
+BEGIN:VEVENT
+UID:ae3db66a-3f3f-5dff-b229-e52daa1c26c1@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260509T210000
+DTEND;TZID=America/Sao_Paulo:20260509T230000
+SUMMARY:EC Bahia x Cruzeiro EC (Brasileirão) — 1 x 2
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 1 x 2
+END:VEVENT
+BEGIN:VEVENT
+UID:27fffe7c-ab80-503e-89c0-ac69100330fd@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260516T210000
+DTEND;TZID=America/Sao_Paulo:20260516T230000
+SUMMARY:SE Palmeiras x Cruzeiro EC (Brasileirão) — 1 x 1
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 1 x 1
+END:VEVENT
+BEGIN:VEVENT
+UID:8e4b2fc1-82bf-5471-a1bc-9a26b34be130@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260524T160000
+DTEND;TZID=America/Sao_Paulo:20260524T180000
+SUMMARY:Cruzeiro EC x Chapecoense AF (Brasileirão) — 2 x 1
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 2 x 1
+END:VEVENT
+BEGIN:VEVENT
+UID:7b6f08a7-24a0-52dc-afcb-362a2526cdd1@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260531T203000
+DTEND;TZID=America/Sao_Paulo:20260531T223000
+SUMMARY:Cruzeiro EC x Fluminense FC (Brasileirão) — 1 x 1
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 1 x 1
+END:VEVENT
+BEGIN:VEVENT
+UID:adfbf00d-9656-5329-931a-2e6a9871c158@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260722T213000
+DTEND;TZID=America/Sao_Paulo:20260722T233000
+SUMMARY:SC Internacional x Cruzeiro EC (Brasileirão) — 1 x 2
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 1 x 2
+END:VEVENT
+BEGIN:VEVENT
+UID:4bddfebe-1110-5311-b50c-605e99a992b0@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260726T160000
+DTEND;TZID=America/Sao_Paulo:20260726T180000
+SUMMARY:Cruzeiro EC x Botafogo FR (Brasileirão) — 0 x 1
+LOCATION:
+DESCRIPTION:Brasileirão | Status: encerrado | Placar final: 0 x 1
+END:VEVENT
+BEGIN:VEVENT
+UID:8021724d-444b-59d7-8900-8e92076e1a06@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260730T213000
+DTEND;TZID=America/Sao_Paulo:20260730T233000
+SUMMARY:Coritiba FBC x Cruzeiro EC (Brasileirão)
+LOCATION:
 DESCRIPTION:Brasileirão | Status: agendado
 END:VEVENT
 BEGIN:VEVENT
-UID:8496f7d6-7145-5592-9995-8e2b51e41272@cruzeiro-fans-calendar
-DTSTAMP:20260728T190238Z
-DTSTART;VALUE=DATE:20260728
-DTEND;VALUE=DATE:20260728
-SUMMARY:Cruzeiro x Atlético-MG (Brasileirão) [data a confirmar]
-LOCATION:Mineirão
+UID:9232b898-6ae0-513e-adb3-206ed98357f8@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260809T110000
+DTEND;TZID=America/Sao_Paulo:20260809T130000
+SUMMARY:Cruzeiro EC x Mirassol FC (Brasileirão)
+LOCATION:
+DESCRIPTION:Brasileirão | Status: agendado
+END:VEVENT
+BEGIN:VEVENT
+UID:d65e5927-5a85-55d7-bfc3-4a493ef9e1f4@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260816T193000
+DTEND;TZID=America/Sao_Paulo:20260816T213000
+SUMMARY:SC Corinthians Paulista x Cruzeiro EC (Brasileirão)
+LOCATION:
+DESCRIPTION:Brasileirão | Status: agendado
+END:VEVENT
+BEGIN:VEVENT
+UID:60ff9024-201e-5e62-a434-60dbb405ef5d@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260822T203000
+DTEND;TZID=America/Sao_Paulo:20260822T223000
+SUMMARY:Cruzeiro EC x CR Flamengo (Brasileirão)
+LOCATION:
+DESCRIPTION:Brasileirão | Status: agendado
+END:VEVENT
+BEGIN:VEVENT
+UID:a5360768-142a-5697-ab3a-ba2d937bc97f@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260828T210000
+DTEND;TZID=America/Sao_Paulo:20260828T230000
+SUMMARY:CR Vasco da Gama x Cruzeiro EC (Brasileirão)
+LOCATION:
+DESCRIPTION:Brasileirão | Status: agendado
+END:VEVENT
+BEGIN:VEVENT
+UID:06e51910-55d7-53fc-878a-2fda99701db0@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260904T210000
+DTEND;TZID=America/Sao_Paulo:20260904T230000
+SUMMARY:Cruzeiro EC x CA Paranaense (Brasileirão)
+LOCATION:
+DESCRIPTION:Brasileirão | Status: agendado
+END:VEVENT
+BEGIN:VEVENT
+UID:3d040396-14b7-53c6-8ca3-a1db45f102be@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260911T210000
+DTEND;TZID=America/Sao_Paulo:20260911T230000
+SUMMARY:Santos FC x Cruzeiro EC (Brasileirão)
+LOCATION:
+DESCRIPTION:Brasileirão | Status: agendado
+END:VEVENT
+BEGIN:VEVENT
+UID:41ee2db7-0b6d-54a0-88dc-f16d9e60c251@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20260918T210000
+DTEND;TZID=America/Sao_Paulo:20260918T230000
+SUMMARY:EC Vitória x Cruzeiro EC (Brasileirão)
+LOCATION:
+DESCRIPTION:Brasileirão | Status: agendado
+END:VEVENT
+BEGIN:VEVENT
+UID:01bfa735-f48a-512b-945a-57ce506686c2@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20261006T210000
+DTEND;TZID=America/Sao_Paulo:20261006T230000
+SUMMARY:Cruzeiro EC x São Paulo FC (Brasileirão)
+LOCATION:
+DESCRIPTION:Brasileirão | Status: agendado
+END:VEVENT
+BEGIN:VEVENT
+UID:aebe9d84-6cda-5da0-9d60-32843dbbacf7@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20261009T210000
+DTEND;TZID=America/Sao_Paulo:20261009T230000
+SUMMARY:RB Bragantino x Cruzeiro EC (Brasileirão)
+LOCATION:
+DESCRIPTION:Brasileirão | Status: agendado
+END:VEVENT
+BEGIN:VEVENT
+UID:8b4d6677-7c4f-5929-8c91-fecdd0fd9b94@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20261016T210000
+DTEND;TZID=America/Sao_Paulo:20261016T230000
+SUMMARY:Grêmio FBPA x Cruzeiro EC (Brasileirão)
+LOCATION:
+DESCRIPTION:Brasileirão | Status: agendado
+END:VEVENT
+BEGIN:VEVENT
+UID:83a3452d-2f8c-533b-ac62-f56b97f5c193@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20261023T210000
+DTEND;TZID=America/Sao_Paulo:20261023T230000
+SUMMARY:Cruzeiro EC x Clube do Remo (Brasileirão)
+LOCATION:
+DESCRIPTION:Brasileirão | Status: agendado
+END:VEVENT
+BEGIN:VEVENT
+UID:3fe8b9b1-b604-54a4-8e19-08eeca6c4e11@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20261027T210000
+DTEND;TZID=America/Sao_Paulo:20261027T230000
+SUMMARY:CA Mineiro x Cruzeiro EC (Brasileirão)
+LOCATION:
+DESCRIPTION:Brasileirão | Status: agendado
+END:VEVENT
+BEGIN:VEVENT
+UID:68563e07-3972-5d36-b531-d7c3116c4ace@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20261103T210000
+DTEND;TZID=America/Sao_Paulo:20261103T230000
+SUMMARY:Cruzeiro EC x EC Bahia (Brasileirão)
+LOCATION:
+DESCRIPTION:Brasileirão | Status: agendado
+END:VEVENT
+BEGIN:VEVENT
+UID:10104442-8739-5bbb-80e4-c0c44d2dbc96@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20261117T210000
+DTEND;TZID=America/Sao_Paulo:20261117T230000
+SUMMARY:Cruzeiro EC x SE Palmeiras (Brasileirão)
+LOCATION:
+DESCRIPTION:Brasileirão | Status: agendado
+END:VEVENT
+BEGIN:VEVENT
+UID:f3f96416-13c9-567e-94c4-f6aa4f5563e0@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20261120T210000
+DTEND;TZID=America/Sao_Paulo:20261120T230000
+SUMMARY:Chapecoense AF x Cruzeiro EC (Brasileirão)
+LOCATION:
+DESCRIPTION:Brasileirão | Status: agendado
+END:VEVENT
+BEGIN:VEVENT
+UID:5f750423-2035-5e4c-a172-f70e3010ff98@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20261127T210000
+DTEND;TZID=America/Sao_Paulo:20261127T230000
+SUMMARY:Fluminense FC x Cruzeiro EC (Brasileirão)
+LOCATION:
+DESCRIPTION:Brasileirão | Status: agendado
+END:VEVENT
+BEGIN:VEVENT
+UID:41af5e62-51c3-5203-9bf0-da77c2b1ecbf@cruzeiro-fans-calendar
+DTSTAMP:20260728T222219Z
+DTSTART;TZID=America/Sao_Paulo:20261201T210000
+DTEND;TZID=America/Sao_Paulo:20261201T230000
+SUMMARY:Cruzeiro EC x SC Internacional (Brasileirão)
+LOCATION:
 DESCRIPTION:Brasileirão | Status: agendado
 END:VEVENT
 END:VCALENDAR
