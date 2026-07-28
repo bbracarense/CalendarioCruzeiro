@@ -56,12 +56,18 @@ def chamar_api(url: str, headers: dict) -> dict:
     req = urllib.request.Request(url, headers=headers)
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
-            return json.load(resp)
+            corpo = resp.read()
     except urllib.error.HTTPError as e:
         print(f"Erro ao consultar {url}: {e.code} {e.reason}", file=sys.stderr)
         return {}
     except urllib.error.URLError as e:
         print(f"Erro de conexão com {url}: {e.reason}", file=sys.stderr)
+        return {}
+
+    try:
+        return json.loads(corpo)
+    except json.JSONDecodeError:
+        print(f"Aviso: resposta de {url} não era JSON válido, ignorando.", file=sys.stderr)
         return {}
 
 # ---------------------------------------------------------------------
@@ -149,13 +155,17 @@ def buscar_id_time(headers: dict) -> int | None:
     dados = chamar_api(
         f"{API_FOOTBALL_BASE}/teams?search={NOME_TIME}", headers
     )
-    for item in dados.get("response", []):
-        if item["team"]["country"] == "Brazil" and item["team"]["name"] == "Cruzeiro":
-            return item["team"]["id"]
-    # fallback: primeiro resultado no Brasil com "Cruzeiro" no nome
-    for item in dados.get("response", []):
-        if item["team"]["country"] == "Brazil":
-            return item["team"]["id"]
+    if dados.get("errors"):
+        print(f"Aviso: a API-Football retornou um erro ao buscar o time: {dados['errors']}", file=sys.stderr)
+    respostas = dados.get("response") or []
+    for item in respostas:
+        time = item.get("team") or {}
+        if time.get("country") == "Brazil" and time.get("name") == "Cruzeiro":
+            return time.get("id")
+    for item in respostas:
+        time = item.get("team") or {}
+        if time.get("country") == "Brazil":
+            return time.get("id")
     return None
 
 def buscar_id_liga(nome_busca: str, headers: dict) -> tuple[int, int] | None:
@@ -163,11 +173,13 @@ def buscar_id_liga(nome_busca: str, headers: dict) -> tuple[int, int] | None:
     dados = chamar_api(
         f"{API_FOOTBALL_BASE}/leagues?search={nome_busca}", headers
     )
-    for item in dados.get("response", []):
-        temporadas = item.get("seasons", [])
-        for temporada in temporadas:
+    if dados.get("errors"):
+        print(f"Aviso: a API-Football retornou um erro ao buscar '{nome_busca}': {dados['errors']}", file=sys.stderr)
+    for item in dados.get("response") or []:
+        liga = item.get("league") or {}
+        for temporada in item.get("seasons") or []:
             if temporada.get("current"):
-                return item["league"]["id"], temporada["year"]
+                return liga.get("id"), temporada.get("year")
     return None
 
 def buscar_copas(token: str, apelidos: dict) -> list:
@@ -193,34 +205,46 @@ def buscar_copas(token: str, apelidos: dict) -> list:
             f"{API_FOOTBALL_BASE}/fixtures?league={liga_id}&season={temporada}&team={time_id}",
             headers,
         )
-        for partida in dados.get("response", []):
-            mandante = partida["teams"]["home"]["name"]
-            visitante = partida["teams"]["away"]["name"]
-            status_curto = partida["fixture"]["status"]["short"]
-            data_iso = partida["fixture"].get("date")  # ex: 2026-04-07T21:00:00+00:00
-            venue = partida["fixture"].get("venue") or {}
+        if dados.get("errors"):
+            print(f"Aviso: erro da API-Football nos jogos de '{nome_busca}': {dados['errors']}", file=sys.stderr)
 
-            jogo = {
-                "competicao": nome_exibicao,
-                "mandante": normalizar_nome(mandante, apelidos),
-                "visitante": normalizar_nome(visitante, apelidos),
-                "chave_unica": f"{nome_exibicao}-{partida['league'].get('round')}-{mandante}-{visitante}",
-                "local": venue.get("name") or "",
-                "status": STATUS_API_FOOTBALL.get(status_curto, status_curto),
-                "data_confirmada": status_curto != "TBD" and data_iso is not None,
-            }
-            if data_iso:
-                # Normaliza pro mesmo formato UTC "...Z" usado na outra fonte.
-                jogo["utc_datetime"] = (
-                    data_iso.replace("+00:00", "Z") if data_iso.endswith("+00:00") else data_iso
-                )
-            if status_curto in ("FT", "AET", "PEN"):
-                gols = partida.get("goals", {})
-                if gols.get("home") is not None:
-                    jogo["gols_mandante"] = gols["home"]
-                    jogo["gols_visitante"] = gols["away"]
+        for partida in dados.get("response") or []:
+            try:
+                times = partida.get("teams") or {}
+                mandante = (times.get("home") or {}).get("name")
+                visitante = (times.get("away") or {}).get("name")
+                fixture = partida.get("fixture") or {}
+                status_curto = (fixture.get("status") or {}).get("short")
+                data_iso = fixture.get("date")  # ex: 2026-04-07T21:00:00+00:00
+                venue = fixture.get("venue") or {}
 
-            jogos.append(jogo)
+                if not mandante or not visitante:
+                    continue
+
+                jogo = {
+                    "competicao": nome_exibicao,
+                    "mandante": normalizar_nome(mandante, apelidos),
+                    "visitante": normalizar_nome(visitante, apelidos),
+                    "chave_unica": f"{nome_exibicao}-{(partida.get('league') or {}).get('round')}-{mandante}-{visitante}",
+                    "local": venue.get("name") or "",
+                    "status": STATUS_API_FOOTBALL.get(status_curto, status_curto or ""),
+                    "data_confirmada": status_curto != "TBD" and data_iso is not None,
+                }
+                if data_iso:
+                    jogo["utc_datetime"] = (
+                        data_iso.replace("+00:00", "Z") if data_iso.endswith("+00:00") else data_iso
+                    )
+                if status_curto in ("FT", "AET", "PEN"):
+                    gols = partida.get("goals") or {}
+                    if gols.get("home") is not None:
+                        jogo["gols_mandante"] = gols["home"]
+                        jogo["gols_visitante"] = gols["away"]
+
+                jogos.append(jogo)
+            except Exception as e:
+                # Um jogo com formato inesperado não pode derrubar os outros.
+                print(f"Aviso: ignorando um jogo de '{nome_busca}' com dado inesperado ({e}).", file=sys.stderr)
+                continue
 
     return jogos
 
@@ -231,7 +255,13 @@ def main():
 
     jogos = []
     jogos += buscar_brasileirao(os.environ.get("FOOTBALL_DATA_API_KEY"), apelidos)
-    jogos += buscar_copas(os.environ.get("API_FOOTBALL_KEY"), apelidos)
+
+    try:
+        jogos += buscar_copas(os.environ.get("API_FOOTBALL_KEY"), apelidos)
+    except Exception as e:
+        # Se a busca de copas falhar de vez, o Brasileirão não pode ser
+        # perdido junto — melhor salvar só ele do que travar tudo.
+        print(f"Aviso: falha ao buscar Copa do Brasil/Libertadores/Sul-Americana: {e}", file=sys.stderr)
 
     jogos.sort(key=lambda j: j.get("utc_datetime") or "9999")
 
