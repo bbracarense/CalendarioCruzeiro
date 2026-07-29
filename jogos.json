@@ -260,6 +260,16 @@
     "utc_datetime": "2026-08-09T14:00:00Z"
   },
   {
+    "competicao": "Copa do Brasil",
+    "mandante": "CRUZEIRO",
+    "visitante": "Ferroviária",
+    "local": "Mineirão",
+    "status": "agendado",
+    "data_confirmada": true,
+    "utc_datetime": "2026-08-13T21:30:00Z",
+    "chave_unica": "manual-Copa do Brasil-CRUZEIRO-Ferroviária"
+  },
+  {
     "competicao": "Brasileirão",
     "mandante": "Corinthians",
     "visitante": "CRUZEIRO",
