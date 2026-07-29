@@ -280,6 +280,16 @@
     "utc_datetime": "2026-08-09T14:00:00Z"
   },
   {
+    "competicao": "Libertadores",
+    "mandante": "CRUZEIRO",
+    "visitante": "Flamegno",
+    "local": "Mineirão",
+    "status": "agendado",
+    "data_confirmada": true,
+    "utc_datetime": "2026-08-13T00:30:00Z",
+    "chave_unica": "manual-Libertadores-CRUZEIRO-Flamegno"
+  },
+  {
     "competicao": "Brasileirão",
     "mandante": "Corinthians",
     "visitante": "CRUZEIRO",
@@ -288,6 +298,16 @@
     "status": "agendado",
     "data_confirmada": true,
     "utc_datetime": "2026-08-16T22:30:00Z"
+  },
+  {
+    "competicao": "Libertadores",
+    "mandante": "Flamengo",
+    "visitante": "CRUZEIRO",
+    "local": "Maracanã",
+    "status": "agendado",
+    "data_confirmada": true,
+    "utc_datetime": "2026-08-20T00:30:00Z",
+    "chave_unica": "manual-Libertadores-Flamengo-CRUZEIRO"
   },
   {
     "competicao": "Brasileirão",
