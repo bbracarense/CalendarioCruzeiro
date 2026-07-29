@@ -260,6 +260,16 @@
     "chave_unica": "manual-Copa do Brasil-Chapecoense-CRUZEIRO"
   },
   {
+    "competicao": "Copa do Brasil",
+    "mandante": "CRUZEIRO",
+    "visitante": "Chapecoense",
+    "local": "Mineirão",
+    "status": "agendado",
+    "data_confirmada": true,
+    "utc_datetime": "2026-08-05T22:00:00Z",
+    "chave_unica": "manual-Copa do Brasil-CRUZEIRO-Chapecoense"
+  },
+  {
     "competicao": "Brasileirão",
     "mandante": "CRUZEIRO",
     "visitante": "Mirassol",
