@@ -282,12 +282,12 @@
   {
     "competicao": "Libertadores",
     "mandante": "CRUZEIRO",
-    "visitante": "Flamegno",
+    "visitante": "Flamengo",
     "local": "Mineirão",
     "status": "agendado",
     "data_confirmada": true,
     "utc_datetime": "2026-08-13T00:30:00Z",
-    "chave_unica": "manual-Libertadores-CRUZEIRO-Flamegno"
+    "chave_unica": "manual-Libertadores-CRUZEIRO-Flamengo"
   },
   {
     "competicao": "Brasileirão",
