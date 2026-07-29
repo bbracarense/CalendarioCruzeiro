@@ -4,11 +4,11 @@
   },
   {
     "competicao": "Copa do Brasil",
-    "mandante": "CRUZEIRO",
-    "visitante": "Ferroviária",
-    "local": "Mineirão",
+    "mandante": "Chapecoense",
+    "visitante": "CRUZEIRO",
+    "local": "Arena Condá",
     "status": "agendado",
     "data_confirmada": true,
-    "utc_datetime": "2026-08-13T21:30:00Z"
+    "utc_datetime": "2026-08-02T18:30:00Z"
   }
 ]
