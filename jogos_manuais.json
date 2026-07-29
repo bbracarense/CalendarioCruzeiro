@@ -1,0 +1,14 @@
+[
+  {
+    "_como_usar": "Essa primeira linha é só instrução, ignorada pelo robô. Copie o bloco de exemplo abaixo pra cada jogo novo. Campos: competicao (texto livre), mandante/visitante (nome do time, igual aparece nos jogos automáticos), local (estádio, pode deixar \"\" se não souber), status (\"agendado\" ou \"encerrado\"), data_confirmada (true se já tem data marcada, false se ainda não), utc_datetime (data/hora em UTC no formato AAAA-MM-DDTHH:MM:SSZ — o horário de Brasília + 3 horas, já que Brasília está sempre 3h atrás do UTC), gols_mandante/gols_visitante (só preencher se o jogo já acabou)."
+  },
+  {
+    "competicao": "Copa do Brasil",
+    "mandante": "CRUZEIRO",
+    "visitante": "Ferroviária",
+    "local": "Mineirão",
+    "status": "agendado",
+    "data_confirmada": true,
+    "utc_datetime": "2026-08-13T21:30:00Z"
+  }
+]

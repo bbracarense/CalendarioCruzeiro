@@ -249,6 +249,43 @@ def buscar_copas(token: str, apelidos: dict) -> list:
     return jogos
 
 # ---------------------------------------------------------------------
+# Jogos manuais (jogos_manuais.json) — pra você adicionar à mão jogos que
+# a busca automática não pega (ex: Copa do Brasil/Libertadores, já que a
+# API-Football suspende a conta quando usada a partir do GitHub Actions,
+# porque o IP muda a cada execução e o sistema antifraude dela interpreta
+# isso como a chave sendo compartilhada/vazada).
+#
+# Esse arquivo NUNCA é sobrescrito pelo robô — ele só lê e soma ao que
+# já buscou sozinho. É seguro editar quando quiser.
+# ---------------------------------------------------------------------
+
+ARQUIVO_MANUAL = "jogos_manuais.json"
+
+def carregar_jogos_manuais(apelidos: dict) -> list:
+    try:
+        with open(ARQUIVO_MANUAL, encoding="utf-8") as f:
+            bruto = json.load(f)
+    except FileNotFoundError:
+        return []
+    except json.JSONDecodeError as e:
+        print(f"Aviso: {ARQUIVO_MANUAL} tem um erro de formatação e foi ignorado ({e}).", file=sys.stderr)
+        return []
+
+    jogos = []
+    for item in bruto:
+        if "_como_usar" in item:
+            continue
+        jogo = dict(item)  # cópia, não mexe no arquivo original
+        jogo["mandante"] = normalizar_nome(jogo.get("mandante", ""), apelidos)
+        jogo["visitante"] = normalizar_nome(jogo.get("visitante", ""), apelidos)
+        jogo.setdefault(
+            "chave_unica",
+            f"manual-{jogo.get('competicao')}-{jogo.get('mandante')}-{jogo.get('visitante')}",
+        )
+        jogos.append(jogo)
+    return jogos
+
+# ---------------------------------------------------------------------
 
 def main():
     apelidos = carregar_apelidos()
@@ -262,6 +299,8 @@ def main():
         # Se a busca de copas falhar de vez, o Brasileirão não pode ser
         # perdido junto — melhor salvar só ele do que travar tudo.
         print(f"Aviso: falha ao buscar Copa do Brasil/Libertadores/Sul-Americana: {e}", file=sys.stderr)
+
+    jogos += carregar_jogos_manuais(apelidos)
 
     jogos.sort(key=lambda j: j.get("utc_datetime") or "9999")
 
