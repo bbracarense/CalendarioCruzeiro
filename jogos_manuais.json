@@ -10,5 +10,14 @@
     "status": "agendado",
     "data_confirmada": true,
     "utc_datetime": "2026-08-02T18:30:00Z"
+  },
+  {
+    "competicao": "Copa do Brasil",
+    "mandante": "CRUZEIRO",
+    "visitante": "Chapecoense",
+    "local": "Mineirão",
+    "status": "agendado",
+    "data_confirmada": true,
+    "utc_datetime": "2026-08-05T22:00:00Z"
   }
 ]
