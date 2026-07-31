@@ -245,9 +245,11 @@
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-21-Coritiba FBC-Cruzeiro EC",
     "local": "",
-    "status": "agendado",
+    "status": "encerrado",
     "data_confirmada": true,
-    "utc_datetime": "2026-07-31T00:30:00Z"
+    "utc_datetime": "2026-07-31T00:30:00Z",
+    "gols_mandante": 0,
+    "gols_visitante": 1
   },
   {
     "competicao": "Copa do Brasil",
