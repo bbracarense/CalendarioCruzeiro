@@ -9,7 +9,9 @@
     "local": "Arena Condá",
     "status": "agendado",
     "data_confirmada": true,
-    "utc_datetime": "2026-08-02T21:30:00Z"
+    "utc_datetime": "2026-08-02T21:30:00Z",
+    "gols_mandante": 0,
+    "gols_visitante": 0
   },
   {
     "competicao": "Copa do Brasil",
@@ -18,7 +20,9 @@
     "local": "Mineirão",
     "status": "agendado",
     "data_confirmada": true,
-    "utc_datetime": "2026-08-05T22:00:00Z"
+    "utc_datetime": "2026-08-05T22:00:00Z",
+    "gols_mandante": 2,
+    "gols_visitante": 0
   },
   {
     "competicao": "Libertadores",
