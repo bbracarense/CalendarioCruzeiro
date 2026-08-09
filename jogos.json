@@ -281,7 +281,7 @@
     "visitante": "Mirassol",
     "chave_unica": "BSA-22-Cruzeiro EC-Mirassol FC",
     "local": "",
-    "status": "agendado",
+    "status": "LIVE",
     "data_confirmada": true,
     "utc_datetime": "2026-08-09T14:00:00Z"
   },
