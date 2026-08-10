@@ -281,9 +281,11 @@
     "visitante": "Mirassol",
     "chave_unica": "BSA-22-Cruzeiro EC-Mirassol FC",
     "local": "",
-    "status": "LIVE",
+    "status": "encerrado",
     "data_confirmada": true,
-    "utc_datetime": "2026-08-09T14:00:00Z"
+    "utc_datetime": "2026-08-09T14:00:00Z",
+    "gols_mandante": 3,
+    "gols_visitante": 1
   },
   {
     "competicao": "Libertadores",
