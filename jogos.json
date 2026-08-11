@@ -328,6 +328,16 @@
     "utc_datetime": "2026-08-22T23:30:00Z"
   },
   {
+    "competicao": "Copa do Brasil",
+    "mandante": "CRUZEIRO",
+    "visitante": "Frangas",
+    "local": "Mineirão",
+    "status": "data base",
+    "data_confirmada": true,
+    "utc_datetime": "2026-08-26T00:30:00Z",
+    "chave_unica": "manual-Copa do Brasil-CRUZEIRO-Frangas"
+  },
+  {
     "competicao": "Brasileirão",
     "mandante": "Vasco",
     "visitante": "CRUZEIRO",
@@ -336,6 +346,16 @@
     "status": "agendado",
     "data_confirmada": true,
     "utc_datetime": "2026-08-29T00:00:00Z"
+  },
+  {
+    "competicao": "Copa do Brasil",
+    "mandante": "Frangas",
+    "visitante": "CRUZEIRO",
+    "local": "Cu de Zebra",
+    "status": "data base",
+    "data_confirmada": true,
+    "utc_datetime": "2026-09-02T00:30:00Z",
+    "chave_unica": "manual-Copa do Brasil-Frangas-CRUZEIRO"
   },
   {
     "competicao": "Brasileirão",
