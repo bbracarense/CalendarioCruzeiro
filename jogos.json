@@ -303,7 +303,7 @@
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-23-SC Corinthians Paulista-Cruzeiro EC",
     "local": "",
-    "status": "agendado",
+    "status": "2026-08-16 21:30:00Z",
     "data_confirmada": true,
     "utc_datetime": "2026-08-16T22:30:00Z"
   },
@@ -323,7 +323,7 @@
     "visitante": "Flamengo",
     "chave_unica": "BSA-24-Cruzeiro EC-CR Flamengo",
     "local": "",
-    "status": "agendado",
+    "status": "2026-08-22 22:30:00Z",
     "data_confirmada": true,
     "utc_datetime": "2026-08-22T23:30:00Z"
   },
@@ -343,7 +343,7 @@
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-25-CR Vasco da Gama-Cruzeiro EC",
     "local": "",
-    "status": "agendado",
+    "status": "2026-08-30 19:00:00Z",
     "data_confirmada": true,
     "utc_datetime": "2026-08-30T00:20:00Z"
   },
@@ -373,7 +373,7 @@
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-27-Santos FC-Cruzeiro EC",
     "local": "",
-    "status": "agendado",
+    "status": "2026-09-13 19:00:00Z",
     "data_confirmada": true,
     "utc_datetime": "2026-09-12T00:00:00Z"
   },
@@ -383,7 +383,7 @@
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-28-EC Vitória-Cruzeiro EC",
     "local": "",
-    "status": "agendado",
+    "status": "2026-09-20 19:00:00Z",
     "data_confirmada": true,
     "utc_datetime": "2026-09-19T00:00:00Z"
   },
@@ -393,7 +393,7 @@
     "visitante": "São Paulo",
     "chave_unica": "BSA-29-Cruzeiro EC-São Paulo FC",
     "local": "",
-    "status": "agendado",
+    "status": "2026-10-07 19:00:00Z",
     "data_confirmada": true,
     "utc_datetime": "2026-10-07T00:00:00Z"
   },
@@ -403,7 +403,7 @@
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-30-RB Bragantino-Cruzeiro EC",
     "local": "",
-    "status": "agendado",
+    "status": "2026-10-11 19:00:00Z",
     "data_confirmada": true,
     "utc_datetime": "2026-10-10T00:00:00Z"
   },
@@ -413,7 +413,7 @@
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-31-Grêmio FBPA-Cruzeiro EC",
     "local": "",
-    "status": "agendado",
+    "status": "2026-10-18 19:00:00Z",
     "data_confirmada": true,
     "utc_datetime": "2026-10-17T00:00:00Z"
   },
