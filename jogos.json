@@ -347,9 +347,11 @@
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-25-CR Vasco da Gama-Cruzeiro EC",
     "local": "",
-    "status": "agendado",
+    "status": "encerrado",
     "data_confirmada": true,
-    "utc_datetime": "2026-08-30T00:20:00Z"
+    "utc_datetime": "2026-08-30T00:20:00Z",
+    "gols_mandante": 3,
+    "gols_visitante": 1
   },
   {
     "competicao": "Copa do Brasil",
