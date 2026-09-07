@@ -369,9 +369,11 @@
     "visitante": "Athletico-PR",
     "chave_unica": "BSA-26-Cruzeiro EC-CA Paranaense",
     "local": "",
-    "status": "agendado",
+    "status": "encerrado",
     "data_confirmada": true,
-    "utc_datetime": "2026-09-06T19:00:00Z"
+    "utc_datetime": "2026-09-06T19:00:00Z",
+    "gols_mandante": 3,
+    "gols_visitante": 1
   },
   {
     "competicao": "Brasileirão",
