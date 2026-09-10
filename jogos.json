@@ -381,7 +381,7 @@
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-27-Santos FC-Cruzeiro EC",
     "local": "",
-    "status": "agendado",
+    "status": "2026-09-12 23:00:00Z",
     "data_confirmada": true,
     "utc_datetime": "2026-09-13T00:00:00Z"
   },
@@ -391,7 +391,7 @@
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-28-EC Vitória-Cruzeiro EC",
     "local": "",
-    "status": "agendado",
+    "status": "2026-09-20 18:00:00Z",
     "data_confirmada": true,
     "utc_datetime": "2026-09-20T19:00:00Z"
   },
@@ -401,7 +401,7 @@
     "visitante": "São Paulo",
     "chave_unica": "BSA-29-Cruzeiro EC-São Paulo FC",
     "local": "",
-    "status": "agendado",
+    "status": "2026-10-07 23:30:00Z",
     "data_confirmada": true,
     "utc_datetime": "2026-10-08T00:30:00Z"
   },
@@ -411,7 +411,7 @@
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-30-RB Bragantino-Cruzeiro EC",
     "local": "",
-    "status": "agendado",
+    "status": "2026-10-12 23:00:00Z",
     "data_confirmada": true,
     "utc_datetime": "2026-10-13T00:00:00Z"
   },
@@ -421,7 +421,7 @@
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-31-Grêmio FBPA-Cruzeiro EC",
     "local": "",
-    "status": "agendado",
+    "status": "2026-10-18 19:00:00Z",
     "data_confirmada": true,
     "utc_datetime": "2026-10-17T00:00:00Z"
   },
