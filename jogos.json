@@ -405,9 +405,11 @@
     "visitante": "São Paulo",
     "chave_unica": "BSA-29-Cruzeiro EC-São Paulo FC",
     "local": "",
-    "status": "agendado",
+    "status": "encerrado",
     "data_confirmada": true,
-    "utc_datetime": "2026-10-08T00:30:00Z"
+    "utc_datetime": "2026-10-08T00:30:00Z",
+    "gols_mandante": 2,
+    "gols_visitante": 0
   },
   {
     "competicao": "Brasileirão",
