@@ -417,11 +417,9 @@
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-30-RB Bragantino-Cruzeiro EC",
     "local": "",
-    "status": "encerrado",
+    "status": "agendado",
     "data_confirmada": true,
-    "utc_datetime": "2026-10-13T00:00:00Z",
-    "gols_mandante": 4,
-    "gols_visitante": 2
+    "utc_datetime": "2026-10-13T00:00:00Z"
   },
   {
     "competicao": "Brasileirão",
