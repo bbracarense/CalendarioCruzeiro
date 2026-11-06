@@ -465,9 +465,11 @@
     "visitante": "Bahia",
     "chave_unica": "BSA-34-Cruzeiro EC-EC Bahia",
     "local": "",
-    "status": "agendado",
+    "status": "encerrado",
     "data_confirmada": true,
-    "utc_datetime": "2026-11-06T00:30:00Z"
+    "utc_datetime": "2026-11-06T00:30:00Z",
+    "gols_mandante": 3,
+    "gols_visitante": 2
   },
   {
     "competicao": "Brasileirão",
