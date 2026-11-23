@@ -489,9 +489,11 @@
     "visitante": "CRUZEIRO",
     "chave_unica": "BSA-36-Chapecoense AF-Cruzeiro EC",
     "local": "",
-    "status": "em andamento",
+    "status": "encerrado",
     "data_confirmada": true,
-    "utc_datetime": "2026-11-22T00:00:00Z"
+    "utc_datetime": "2026-11-22T00:00:00Z",
+    "gols_mandante": 1,
+    "gols_visitante": 2
   },
   {
     "competicao": "Brasileirão",
